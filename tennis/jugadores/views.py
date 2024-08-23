@@ -19,7 +19,7 @@ def inicio(request):
 def nosotros(request):
     return render(request,'paginas_base/nosotros.html')        
 
-def crear_editar(request,id=0):
+def crear_editarJugador(request,id=0):
       if request.method=="GET":
         if id==0:
             formulario=JugadorForm()   
