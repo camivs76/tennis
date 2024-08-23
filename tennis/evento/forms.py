@@ -3,33 +3,29 @@ from django import forms
 from .models import Evento
 
 
-class CuotaForm(forms.ModelForm):
+class EventoForm(forms.ModelForm):
   class Meta:
         model=Evento
        #fields='__all__'
-        fields=('idCuota','id','nom','cuotaMes','fechap',"importe")
+        fields=('idEvento','nom','fecha','ubicacion',"idOrganizacion")
         labels ={
           
-            "idCuota":" id cuota",
-            "id" : "Jugador" ,
+            "idEvento":" id Evento",
             'nom': 'nombre y apellido del jugador:',
-            "cuotaMes":"Mes al que corresponde la cuota",
-            "fechap" : "fecha de pago" ,
-            "importe" : "valor cuota" ,
+            "fecha":"Fecha Evento",
+            "ubicacion" : "ubicación " ,
+            "Organizador" : "Id Organizador" ,
 
-          #  "nummac" : "numero de macc " ,
            
-                   
         
         }
         
     
   def __init__(self, *args, **kwargs):
-        super(CuotaForm,self).__init__(*args,**kwargs)
+        super(EventoForm,self).__init__(*args,**kwargs)
         
-       
-        self.fields['cuotaMes']
+        self.fields['fecha']
         self.fields['nom'].empty_label="Selecciona"
        # self.fields['nom'].required=True
-        self.fields['fechap'].required=False
+        self.fields['idOrganizador'].required=False
         
