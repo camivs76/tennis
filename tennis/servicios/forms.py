@@ -17,7 +17,7 @@ class ServicioForm(forms.ModelForm):
     
   def __init__(self, *args, **kwargs):
         super(ServicioForm,self).__init__(*args,**kwargs)
-     #   self.fields['nom'].empty_label="Selecciona"
+        self.fields['idServicio'].empty_label="Selecciona"
         self.fields['descripcion'].required=True
         self.fields['costo'].required=False
         
@@ -27,13 +27,12 @@ class ContratacionForm(forms.ModelForm):
   class Meta:
         model=Contratacion
        #fields='__all__'
-        fields=('idContratacion','fecha','idServicio','costo')
+        fields=('idContratacion','fecha','idServicio','nomContratante')
         labels ={
-            "idContratacion" : "Númoro de Contratación" ,
+            "idContratacion" : "Número de Contratacion" ,
             'fecha': 'Fecha contratación:',
             "idServicio" : "Cód de Servicio" ,
-            'costo' : "Costo",
-            'nomContaratante':'Nombre del Contaratante',
+            'nomContratante':'Nombre del Contratante',
                               
         }
         
@@ -41,7 +40,7 @@ class ContratacionForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
         super(ContratacionForm,self).__init__(*args,**kwargs)
      #   self.fields['nom'].empty_label="Selecciona"
-        self.fields['idContratación'].required=True
+        self.fields['idContratacion'].required=True
         self.fields['fecha'].required=True
-        self.fields['nomContaratante'].required=False        
+        self.fields['nomContratante'].required=False        
         

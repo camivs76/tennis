@@ -1,41 +1,41 @@
 {% extends 'paginas_base/base.html' %}
 
-{% block titulo %}Página Lista de Cuotas {% endblock titulo %}
+{% block titulo %}Página Lista de Eventos {% endblock titulo %}
 {% block contenido %}
     <div class="card">
         <div class="card-header">
-            <a name="btnuevo" id="btnuevo" class="btn btn-primary" href="{% url 'crear_editarCuota' idCuota=0  %}" role="button">Nueva Cuota</a>
+            <a name="btnuevo" id="btnuevo" class="btn btn-primary" href="{% url 'crear_editarEvento' idEvento=0  %}" role="button">Nuevo Evento</a>
         </div>
         <div class="card-body">
-            <h4 class="card-title">CUOTA</h4>
+            <h4 class="card-title">Eventos</h4>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nro. Registro</th>
-                        <th>Nombre</th>    
-                        <th>Mes</th>                       
-                        <th>Fecha de Pago</th>
-                        <th>importe</th>
-                       
-                        
+                        <th>Código Evento</th>
+                        <th>Nombre Evento</th>                      
+                        <th>Fecha Evento</th>
+                        <th>Ubicación</th>
+                        <th>Código del Organizador</th>
+                               
+                      
                     </tr>
                 </thead>
                 <tbody>
-                    {% for ju in eventos %}
+                    {% for e in eventos %}
                     <tr>  
-                        <td>{{ ju.idCuota}}</td>     
-                        <td>{{ ju.nom}}</td>       
-                        <td>{{ ju.cuotaMes}}</td>
-                        <td>{{ ju.fechap }}</td>
-                        <td>{{ ju.importe }}</td>
+                        <td>{{ e.idEvento}}</td>     
+                        <td>{{ e.nom}}</td>       
+                        <td>{{ e.fecha}}</td>
+                        <td>{{ e.ubicacion }}</td>
+                        <td>{{ e.idOrganizador }}</td>
                        
                       {% comment %}
                         <td>
                             <img src="{{ cl.foto.url }}" height="60">
                         </td>  {% endcomment %}
                         <td>
-                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarCuota' ju.idCuota  %}" role="button">Editar</a>
-                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminaCuota' ju.idCuota %}" role="button">Eliminar</a>
+                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarEvento' e.idEvento  %}" role="button">Editar</a>
+                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminaEvento' e.idEvento %}" role="button">Eliminar</a>
                         </td>                        
                     </tr>
                     {% endfor %}

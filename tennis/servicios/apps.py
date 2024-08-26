@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 
 
-class SocioConfig(AppConfig):
+class ServicioConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'socios'
+    name = 'servicios'
+    
+    

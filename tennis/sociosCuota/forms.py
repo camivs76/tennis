@@ -1,10 +1,10 @@
 from socket import fromshare
 from django import forms 
-from .models import Socio
+from .models import SocioCuota
 
 class SocioCuotaForm(forms.ModelForm):
   class Meta:
-        model=Socio
+        model=SocioCuota
        #fields='__all__'
         fields=('DNI','nom','fechaMes',"fechap","tel","imp")
 
@@ -24,8 +24,8 @@ class SocioCuotaForm(forms.ModelForm):
         
     
   def __init__(self, *args, **kwargs):
-        super(SocioForm,self).__init__(*args,**kwargs)
-     #   self.fields['nom'].empty_label="Selecciona"
+        super(SocioCuotaForm,self).__init__(*args,**kwargs)
+        self.fields['DNI'].empty_label="Selecciona"
         self.fields['nom'].required=True
         self.fields['fechaMes'].required=False
         

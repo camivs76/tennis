@@ -8,7 +8,7 @@ from .forms import ServicioForm, ContratacionForm
 # Create your views here
 def listaServicio(request):
     servicio=Servicio.objects.all()
-    return render(request,"CrudSocio/listado.html",{'servicio':servicio})
+    return render(request,"CrudServicio/listado.html",{'servicio':servicio})
 def inicio(request):
     return render(request,'paginas_base/inicio.html')
 def nosotros(request):
@@ -20,12 +20,12 @@ def crear_editarServicio(request,idServicio=0):
         else:
             Servicioid=Servicio.objects.get(pk=idServicio)
             formulario=ServicioForm(instance=Servicioid)
-        return render(request,'CrudSocio/Crear.html',{'formulario':formulario})
+        return render(request,'CrudServicio/Crear.html',{'formulario':formulario})
       else:
         if idServicio==0:
             formulario=ServicioForm(request.POST or None, request.FILES or None)
         else:
-            Socioid=Servicio.objects.get(pk=id)
+            Servicioid=Servicio.objects.get(pk=id)
             formulario=ServicioForm(request.POST or None, request.FILES or None ,instance=Servicioid)            
         if formulario.is_valid():
             formulario.save()
@@ -41,20 +41,20 @@ def eliminar(request, idServicio):
 # Create your views here
 def listaContratacion(request):
     contratacion=Servicio.objects.all()
-    return render(request,"Crud/listado.html",{'contratacion':contratacion})
+    return render(request,"CrudContratación/listado.html",{'contratacion':contratacion})
 
 
 
 
     
-def crear_editarServicio(request,idContratacion=0):
+def crear_editarContratacion(request,idContratacion=0):
       if request.method=="GET":
         if idContratacion==0:
             formulario=ContratacionForm()   
         else:
             contratacionid=Contratacion.objects.get(pk=idContratacion)
             formulario=ContratacionForm(instance=contratacionid)
-        return render(request,'CrudSocio/Crear.html',{'formulario':formulario})
+        return render(request,'CrudContratacion/Crear.html',{'formulario':formulario})
       else:
         if idContratacion==0:
             formulario=ContratacionForm(request.POST or None, request.FILES or None)
@@ -65,7 +65,7 @@ def crear_editarServicio(request,idContratacion=0):
             formulario.save()
         return redirect('listaContratacion')
         
-def eliminar(request, idContratacion):
+def eliminarContratacion(request, idContratacion):
     bc=Contratacion.objects.get(id=idContratacion)
     bc.delete()
     return redirect('listaContratacion')

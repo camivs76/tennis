@@ -34,6 +34,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'listaSocio' %}">Socios</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'listaEvento' %}">Eventos</a>
+              </li>
+              
               
               {% comment %}
                    
@@ -58,8 +62,9 @@
                   Cuotas
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Socio</a></li>
+            
                   <li><a class="dropdown-item" href="{% url 'listaCuota' %}">Jugador</a></li>
+                  <li><a class="dropdown-item" href="{% url 'listaSocioCuota' %}">Socio</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>

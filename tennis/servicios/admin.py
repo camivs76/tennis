@@ -4,7 +4,8 @@ from .models import *
 
 # Register your models here.
 
-admin.site.register(Socio)
+admin.site.register(Servicio)
+admin.site.register(Contratacion)
 
 
 
