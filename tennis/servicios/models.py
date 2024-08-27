@@ -17,7 +17,7 @@ class Servicio(models.Model):
 # Create your models here.
 class Contratacion(models.Model):
     idContratacion = models.AutoField(primary_key=True, db_column='idContratacion')
-    fecha=models.IntegerField(verbose_name="fecha")
+    fecha=models.DateField(verbose_name="fecha")
     idServicio= models.ForeignKey(Servicio,verbose_name="idServicio",on_delete=models.CASCADE)
     nomContratante=models.TextField(max_length=25,verbose_name="nomContratante")
     

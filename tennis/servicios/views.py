@@ -35,7 +35,7 @@ def crear_editarServicio(request,idServicio=0):
         return redirect('listaServicio')
         
 def eliminar(request, idServicio):
-    bc=Servicio.objects.get(id=idServicio)
+    bc=Servicio.objects.get(idServicio=idServicio)
     bc.delete()
     return redirect('listaServicio')
         
@@ -43,8 +43,8 @@ def eliminar(request, idServicio):
 
 # Create your views here
 def listaContratacion(request):
-    contratacion=Servicio.objects.all()
-    return render(request,"CrudContratación/listado.html",{'contratacion':contratacion})
+    contratacion=Contratacion.objects.all()
+    return render(request,"CrudContratacion/listado.html",{'contratacion':contratacion})
 
 
 
@@ -69,7 +69,7 @@ def crear_editarContratacion(request,idContratacion=0):
         return redirect('listaContratacion')
         
 def eliminarContratacion(request, idContratacion):
-    bc=Contratacion.objects.get(id=idContratacion)
+    bc = Contratacion.objects.get(idContratacion=idContratacion)
     bc.delete()
     return redirect('listaContratacion')
         

@@ -40,7 +40,7 @@ class ContratacionForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
         super(ContratacionForm,self).__init__(*args,**kwargs)
      #   self.fields['nom'].empty_label="Selecciona"
-        self.fields['idContratacion'].required=True
+        self.fields['idServicio'].required=True
         self.fields['fecha'].required=True
         self.fields['nomContratante'].required=False        
         
