@@ -27,5 +27,7 @@ urlpatterns = [
     path('', include('sociosCuota.urls')),
     path('', include('evento.urls')),
     path('', include('servicios.urls')),
+    path('', include('deportes.urls')),
+ 
     
 ]
