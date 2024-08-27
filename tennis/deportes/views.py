@@ -9,8 +9,8 @@ from .forms import DeporteDForm
 # Create your views here
 
 def listaD(request):
-    deportes=DeporteD.objects.all()
-    return render(request,"Crud/listado.html",{'deportes':deportes})
+    deporte=DeporteD.objects.all()
+    return render(request,"Crud/listado.html",{'deportes':deporte})
 
 
 def inicio(request):
@@ -38,7 +38,7 @@ def crear_editarDeporteD(request,idDeporte=0):
         return redirect('listaD')
         
 def eliminar (request, idDeporte):
-    bc=DeporteD.objects.get(idDeporte=idDeporte)
+    bc=DeporteD.objects.get(pk=idDeporte)
     bc.delete()
     return redirect('listaD')
         

@@ -29,10 +29,9 @@ class CategoriaForm(forms.ModelForm):
         model=Categoria
        #fields='__all__'
                          
-        fields=('idCategoria','descripcion')
-        labels ={
-          
-            'idCategoria': 'Código de Categoria:',
+        fields=('descripcion',)
+        labels ={          
+         
             "descripcion" : "Nombre categoria" ,
                   
                    
@@ -43,7 +42,7 @@ class CategoriaForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
         super(CategoriaForm,self).__init__(*args,**kwargs)
         self.fields['descripcion'].empty_label="Selecciona"
-        self.fields['idCategoria'].required=True
+       
       
       
         

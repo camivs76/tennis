@@ -59,10 +59,10 @@ def crear_editarOrganizador(request,idOrganizador=0):
         return render(request,'crudEOrganizador/Crear.html',{'formulario':formulario})
       else:#, se busca el evento existente y se vincula al formulario con los datos enviados.
 
-        if idEvento==0:#Si idEvento es 0, se crea un formulario con los datos enviados (request.POST y request.FILES).
+        if idOrganizador==0:#Si idEvento es 0, se crea un formulario con los datos enviados (request.POST y request.FILES).
             formulario=OrganizadorForm(request.POST or None, request.FILES or None)
         else:
-            organizadorid=Organizador.objects.get(pk=idEvento)
+            organizadorid=Organizador.objects.get(pk=idOrganizador)
             formulario=OrganizadorForm(request.POST or None, request.FILES or None ,instance=organizadorid)            
         if formulario.is_valid():
             formulario.save()

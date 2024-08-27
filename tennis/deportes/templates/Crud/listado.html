@@ -18,17 +18,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for ju in deportes %}
+                    {% for d in deportes %}
                     <tr>  
                 
-                        <td>{{ ju.nombre}}</td>
-                        <td>{{ ju.idCategoria}}</td>
-                        <td>{{ ju.horario }}</td>
+                        <td>{{ d.nombre}}</td>
+                        <td>{{ d.idCategoria}}</td>
+                        <td>{{ d.horario }}</td>
                                                                                                                                                       
                       
                         <td>
-                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarDeporteD' ju.idDeporte  %}" role="button">Editar</a>
-                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminar' ju.idDeporte  %}" role="button">Eliminar</a>
+                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarDeporteD' d.idDeporte  %}" role="button">Editar</a>
+                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminar' d.idDeporte  %}" role="button">Eliminar</a>
                         </td>                        
                     </tr>
                     {% endfor %}
