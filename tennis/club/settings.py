@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'sociosCuota',
     'evento',
     'servicios',
+    'deportes',
     'crispy_forms',
     "crispy_bootstrap4",
     

@@ -23,8 +23,8 @@
                 </thead>
                 <tbody>
                     {% for ju in socio %}
-                    <tr>  
-                        <td>{{ ju.id}}</td>                     
+                    <tr
+                                       
                         <td>{{ ju.DNI}}</td>
                         <td>{{ ju.nom}}</td>
                         <td>{{ ju.fechaMes}}</td>
@@ -32,16 +32,7 @@
                         <td>{{ ju.tel}}</td>
                         <td>{{ ju.imp}}</td>
                    
-                   
-                   
-                        
-                        
-                      
-                      {% comment %}
-                        <td>
-                            <img src="{{ cl.foto.url }}" height="60">
-                        </td>  {% endcomment %}
-                        <td>
+                       <td>
                             <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarSocioCuota' ju.id  %}" role="button">Editar</a>
                             <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminar' ju.id  %}" role="button">Eliminar</a>
                         </td>                        
