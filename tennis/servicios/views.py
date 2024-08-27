@@ -9,10 +9,13 @@ from .forms import ServicioForm, ContratacionForm
 def listaServicio(request):
     servicio=Servicio.objects.all()
     return render(request,"CrudServicio/listado.html",{'servicio':servicio})
+
 def inicio(request):
     return render(request,'paginas_base/inicio.html')
+
 def nosotros(request):
-    return render(request,'paginas_base/nosotros.html')        
+    return render(request,'paginas_base/nosotros.html')      
+  
 def crear_editarServicio(request,idServicio=0):
       if request.method=="GET":
         if idServicio==0:
@@ -25,7 +28,7 @@ def crear_editarServicio(request,idServicio=0):
         if idServicio==0:
             formulario=ServicioForm(request.POST or None, request.FILES or None)
         else:
-            Servicioid=Servicio.objects.get(pk=id)
+            Servicioid=Servicio.objects.get(pk=idServicio)
             formulario=ServicioForm(request.POST or None, request.FILES or None ,instance=Servicioid)            
         if formulario.is_valid():
             formulario.save()

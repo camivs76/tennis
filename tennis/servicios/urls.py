@@ -7,11 +7,11 @@ from django.contrib.staticfiles.urls import static
 urlpatterns = [
     path('',views.inicio,name='inicio'),
     path('servicios/listaServicio',views.listaServicio,name='listaServicio'),
-    path('servicios/crear_editarServicio/<int:id>/',views.crear_editarServicio,name='crear_editarServicio'),
-    path('servicios/eliminar/<int:id>',views.eliminar,name='eliminar'),
+    path('servicios/crear_editarServicio/<int:idServicio>',views.crear_editarServicio,name='crear_editarServicio'),
+    path('servicios/eliminar/<int:idServicio>',views.eliminar,name='eliminar'),
     path('servicios/listaContratacion',views.listaContratacion,name='listaContratacion'),
-    path('servicios/crear_editarContratacion/<int:id>/',views.crear_editarContratacion,name='crear_editarContratacion'),
-    path('servicios/eliminarContratacion/<int:id>',views.eliminarContratacion,name='eliminarContratacion'),
+    path('servicios/crear_editarContratacion/<int:idContratacion',views.crear_editarContratacion,name='crear_editarContratacion'),
+    path('servicios/eliminarContratacion/<int:idContratacion>',views.eliminarContratacion,name='eliminarContratacion'),
     
 
 

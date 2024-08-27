@@ -1,13 +1,13 @@
 {% extends 'paginas_base/base.html' %}
 
-{% block titulo %}Página Lista de Socios {% endblock titulo %}
+{% block titulo %}Página Lista de Servicios {% endblock titulo %}
 {% block contenido %}
     <div class="card">
         <div class="card-header">
             <a name="btnuevo" id="btnuevo" class="btn btn-primary" href="{% url 'crear_editarServicio' idServicio=0  %}" role="button">Nuevo Socio</a>
         </div>
         <div class="card-body">
-            <h4 class="card-title">Socios</h4>
+            <h4 class="card-title">Servicios</h4>
             <table class="table">
                 <thead>
                     <tr>
@@ -20,13 +20,14 @@
                 <tbody>
                     {% for s in servicio %}
                     <tr>  
-                        <td>{{ s.idServicio}}</td>                     
+                      
+                                  
                         <td>{{ s.descripcion }}</td>
                         <td>{{ s.costo}}</td>
                                   
                      
                         <td>
-                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarServicio' s.idSevicio  %}" role="button">Editar</a>
+                            <a name="bteditar" id="bteditar" class="btn btn-info" href="{% url 'crear_editarServicio' s.idServicio  %}" role="button">Editar</a>
                             <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminar' s.idServicio  %}" role="button">Eliminar</a>
                         </td>                        
                     </tr>
