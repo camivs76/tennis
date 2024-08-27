@@ -13,7 +13,7 @@ class DeporteD(models.Model):
     idDeporte = models.AutoField(primary_key=True, db_column='idDeporte')
     nombre=models.CharField(max_length=25,verbose_name="nombre")
     idCategoria=models.ForeignKey(Categoria, verbose_name="idCategoria", on_delete=models.CASCADE)
-    horario=models.DateField(auto_now=False, auto_now_add=False,verbose_name="horario")
+    horario=models.FloatField(verbose_name="horario")
     
     
     def __str__(self):
