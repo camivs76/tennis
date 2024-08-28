@@ -1,6 +1,6 @@
 {% extends 'paginas_base/base.html' %}
 
-{% block titulo %}Página Lista de Socios {% endblock titulo %}
+{% block titulo %}Página Lista Cuota de Socios {% endblock titulo %}
 {% block contenido %}
     <div class="card">
         <div class="card-header">
@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                     {% for ju in socio %}
-                    <tr
+                    <tr>
                                        
                         <td>{{ ju.DNI}}</td>
                         <td>{{ ju.nom}}</td>
