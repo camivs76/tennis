@@ -8,15 +8,15 @@ class JugadorForm(forms.ModelForm):
        #fields='__all__'
         fields=('DNI','nom','fechan','altura',"peso","dire","cd","talla","descripcion")
         labels ={
-            "DNI" : "DNI del jugador" ,
-            'nom': 'nombre y apellido del jugador:',
-            "fechan" : "fehca de nacimiento del jugador" ,
-            "altura" : "altura del jugador" ,
-            "peso" : "peso del jugador" , 
-            "dire" : "direccion del jugador",
-            "cd" : "codigo postal del jugador",
-            "talla" : "talla de indumentaria ",
-            "descripcion" : "Deporte al que pertenece el jugador",
+            "DNI" : "DNI" ,
+            'nom': 'nombre y apellido',
+            "fechan" : "Fecha de nacimiento" ,
+            "altura" : "Altura" ,
+            "peso" : "Peso" , 
+            "dire" : "Direccion",
+            "cd" : "Código postal",
+            "talla" : "Talla de indumentaria ",
+            "descripcion" : "Deporte al que pertenece",
           #  "nummac" : "numero de macc " ,
            
                    
